@@ -1,0 +1,19 @@
+log:
+  exp_name: 304e9c4798a8c3967de7c74c24ef2e38
+  save_interval: 18
+guide:
+  text: "A gorgeously composed, high-resolution photograph of a 30 years old man wearing red shirt, blue pants, brown shoes, {} view to the camera"
+  diffusion_name: stabilityai/stable-diffusion-2-depth
+  shape_scale: 0.6
+  append_direction: True
+  shape_path: cache/304e9c4798a8c3967de7c74c24ef2e38/mesh.obj
+  # initial_texture: cache/304e9c4798a8c3967de7c74c24ef2e38/texture.png
+  # reference_texture: cache/304e9c4798a8c3967de7c74c24ef2e38/mask.png
+  texture_resolution: 1024
+  guidance_scale: 10
+  texture_interpolation_mode: 'bilinear'
+optim:
+  seed: 3
+render:
+  front_offset: 0
+  n_views: 4

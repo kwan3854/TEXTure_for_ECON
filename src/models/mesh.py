@@ -1,10 +1,11 @@
+import copy
+
 import kaolin as kal
 import torch
 
-import copy
 
 class Mesh:
-    def __init__(self,obj_path, device):
+    def __init__(self, obj_path, device):
         # from https://github.com/threedle/text2mesh
 
         if ".obj" in obj_path:
@@ -39,7 +40,7 @@ class Mesh:
         n = n / twice_area[:, None]
         return n, twice_area / 2
 
-    def standardize_mesh(self,inplace=False):
+    def standardize_mesh(self, inplace=False):
         mesh = self if inplace else copy.deepcopy(self)
 
         verts = mesh.vertices
@@ -50,7 +51,7 @@ class Mesh:
         mesh.vertices = verts
         return mesh
 
-    def normalize_mesh(self,inplace=False, target_scale=1, dy=0):
+    def normalize_mesh(self, inplace=False, target_scale=1, dy=0):
         mesh = self if inplace else copy.deepcopy(self)
 
         verts = mesh.vertices
@@ -62,4 +63,3 @@ class Mesh:
         verts[:, 1] += dy
         mesh.vertices = verts
         return mesh
-

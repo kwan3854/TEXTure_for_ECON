@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional, Tuple, List
+from typing import List, Optional, Tuple
+
 from loguru import logger
 
 
@@ -18,17 +19,18 @@ class RenderConfig:
     # Define the front angle region
     front_range: float = 70
     # The front offset, use to rotate shape from code
-    front_offset:float = 0.0
+    front_offset: float = 0.0
     # Number of views to use
     n_views: int = 8
     # Theta value for rendering during training
-    base_theta:float = 60
+    base_theta: float = 60
     # Additional views to use before rotating around shape
-    views_before: List[Tuple[float,float]] = field(default_factory=list)
+    views_before: List[Tuple[float, float]] = field(default_factory=list)
     # Additional views to use after rotating around shape
-    views_after: List[Tuple[float, float]] = field(default_factory=[[180,30],[180,150]].copy)
+    views_after: List[Tuple[float, float]] = field(default_factory=[[180, 30], [180, 150]].copy)
     # Whether to alternate between the rotating views from the different sides
     alternate_views: bool = True
+
 
 @dataclass
 class GuideConfig:
@@ -52,7 +54,7 @@ class GuideConfig:
     # texture image resolution
     texture_resolution: int = 1024
     # texture mapping interpolation mode from texture image, options: 'nearest', 'bilinear', 'bicubic'
-    texture_interpolation_mode: str= 'bilinear'
+    texture_interpolation_mode: str = 'bilinear'
     # Guidance scale for score distillation
     guidance_scale: float = 7.5
     # Use inpainting in relevant iterations
@@ -120,5 +122,3 @@ class TrainConfig:
     render: RenderConfig = field(default_factory=RenderConfig)
     optim: OptimConfig = field(default_factory=OptimConfig)
     guide: GuideConfig = field(default_factory=GuideConfig)
-
-
