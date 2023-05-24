@@ -1,17 +1,17 @@
 # torch==1.12.1
 # torchvision==0.13.1
-# transformers
-# diffusers
-# accelerate
-# huggingface-hub
+transformers
+diffusers
+accelerate
+huggingface-hub
 ninja
 xatlas
-# imageio
-# matplotlib
+imageio
+matplotlib
 pyrallis
 av
 imageio_ffmpeg
-# loguru
-# tqdm
-# einops
-# opencv-python
+loguru
+tqdm
+einops
+opencv-python
