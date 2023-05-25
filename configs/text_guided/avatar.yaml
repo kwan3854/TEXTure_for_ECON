@@ -1,19 +1,30 @@
 log:
-  exp_name: 304e9c4798a8c3967de7c74c24ef2e38
+  exp_name: TPoseManTest
   save_interval: 18
 guide:
-  text: "A gorgeously composed, high-resolution photograph of a 30 years old man wearing red shirt, blue pants, brown shoes, {} view to the camera"
+  text: A brown haired man wearing black trousers and long sleeve  black T-shirt with
+    black shoes
   diffusion_name: stabilityai/stable-diffusion-2-depth
   shape_scale: 0.6
-  append_direction: True
-  shape_path: cache/304e9c4798a8c3967de7c74c24ef2e38/mesh.obj
-  # initial_texture: cache/304e9c4798a8c3967de7c74c24ef2e38/texture.png
-  # reference_texture: cache/304e9c4798a8c3967de7c74c24ef2e38/mask.png
+  append_direction: true
+  shape_path: cache\TPoseManTest\mesh.obj
+  initial_texture: cache\TPoseManTest\texture.png
+  reference_texture: cache\TPoseManTest\mask.png
   texture_resolution: 1024
-  guidance_scale: 10
-  texture_interpolation_mode: 'bilinear'
+  guidance_scale: 7
+  texture_interpolation_mode: bilinear
+  use_inpainting: true
 optim:
   seed: 3
 render:
   front_offset: 0
-  n_views: 4
+  n_views: 6
+  views_after:
+  - - 180
+    - 30
+  - - 180
+    - 150
+  - - 180
+    - 1
+  - - 180
+    - 180
